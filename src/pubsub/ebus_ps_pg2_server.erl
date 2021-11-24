@@ -58,8 +58,8 @@ broadcast(Name, PoolSize, FromPid, Topic, Msg) ->
 %% @hidden
 init(Name) ->
   PG2Namespace = pg2_namespace(Name),
-  ok = pg2:create(PG2Namespace),
-  ok = pg2:join(PG2Namespace, self()),
+  ok = pg:create(PG2Namespace),
+  ok = pg:join(PG2Namespace, self()),
   {ok, Name}.
 
 %% @hidden
